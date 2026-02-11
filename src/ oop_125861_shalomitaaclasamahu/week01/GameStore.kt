@@ -22,7 +22,7 @@ fun calculateDiscount(price: Int): Int =
     }
 
 fun printReceipt(title: String, finalPrice: Int, note: String?) {
-    println("STRUK PEMBELIAN ")
+    println(" === STRUK PEMBELIAN === ")
     println("Game : $title")
     println("Harga Akhir : Rp $finalPrice")
     println("Catatan : ${note ?: "Tidak ada catatan"}")
