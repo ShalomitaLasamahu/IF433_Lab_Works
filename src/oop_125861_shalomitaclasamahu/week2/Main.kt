@@ -71,3 +71,4 @@ fun main() {
     println("Lama Pinjam: ${loan.loanDuration} hari")
     println("Total Denda: Rp ${loan.calculateFine()}")
 }
+
