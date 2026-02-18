@@ -14,9 +14,18 @@ fun main() {
 
     val weapon = Weapon("Pedang Naga")
 
-    weapon.damage = -50      // harus gagal
-    weapon.damage = 9999     // harus jadi 1000
+    weapon.damage = -50
+    weapon.damage = 9999
 
     println("Damage Weapon: ${weapon.damage}")
     println("Tier Weapon: ${weapon.tier}")
+
+    val player = Player("Shalomita")
+
+    // player.xp  HARUS ERROR (karena private)
+
+    player.addXp(50)
+    player.addXp(60)
+
+    println("Level Sekarang: ${player.level}")
 }
