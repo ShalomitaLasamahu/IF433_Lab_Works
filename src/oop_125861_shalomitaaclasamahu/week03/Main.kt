@@ -22,7 +22,7 @@ fun main() {
 
     val player = Player("Shalomita")
 
-    // player.xp  HARUS ERROR (karena private)
+    // player.xp  HARUS ERROR (karena priv
 
     player.addXp(50)
     player.addXp(60)
