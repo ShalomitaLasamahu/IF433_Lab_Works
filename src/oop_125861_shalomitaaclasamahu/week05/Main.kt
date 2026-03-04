@@ -39,4 +39,20 @@ fun main() {
     println("Luas Lingkaran: ${mathHelper.hitungLuas(7.0)}")
 
     println("====================================")
+
+    // SIMULASI PEMBAYARAN (TASK 2)
+    // ==============================
+
+    println("\n=== SIMULASI PEMBAYARAN ===")
+
+    val eWallet = EWallet("Shalomita", 50000.0)
+    val creditCard = CreditCard("Shalomita", 100000.0)
+
+    // Polymorphic collection
+    val metodePembayaran: List<PaymentMethod> = listOf(eWallet, creditCard)
+
+    for (metode in metodePembayaran) {
+        println("\nMetode: ${metode.accountName}")
+        metode.processPayment(75000.0)
+    }
 }
