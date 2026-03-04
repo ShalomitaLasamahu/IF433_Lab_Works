@@ -26,4 +26,17 @@ fun main() {
         }
         println("-------------")
     }
+
+    // TEST COMPILE-TIME POLYMORPHISM (OVERLOADING)
+    // ==============================
+
+    println("\n=== TEST MATH HELPER (OVERLOADING) ===")
+
+    val mathHelper = MathHelper()
+
+    println("Luas Persegi: ${mathHelper.hitungLuas(4)}")
+    println("Luas Persegi Panjang: ${mathHelper.hitungLuas(5, 3)}")
+    println("Luas Lingkaran: ${mathHelper.hitungLuas(7.0)}")
+
+    println("====================================")
 }
