@@ -1,7 +1,8 @@
 package oop_125861_shalomitaaclasamahu.week05
 
 fun main() {
-    val dosen1 = Dosen(nama = "Pak Alex", nidn ="0123456")
+
+    val dosen1 = Dosen(nama = "Pak Alex", nidn = "0123456")
     val admin1 = Admin(nama = "Bu Siti")
 
     // Polymorphic collection: List yg berisi tipe parent, tapi isinya objek anak
@@ -9,21 +10,22 @@ fun main() {
 
     println("=== AKTIVITAS PEGAWAI ===")
     for (pegawai in daftarPegawai) {
-        // Pemanggilan Runtime Polymorphism
+
+        // Runtime Polymorphism
         pegawai.bekerja()
 
-        //pegawai.mengajar() // INI AKAN EROR karena tipe referensinya adalah pegawai
-            //sMART Casting dengan is dan when
-        when (pegawai){
+        // Smart Casting dengan is dan when
+        when (pegawai) {
             is Dosen -> {
                 println("=> Terdeteksi sebagai dosen (NIDN: ${pegawai.nidn})")
-                pegawai.mengajar() // smart cast! tdk perlu manual casting(as)
+                pegawai.mengajar()
             }
             is Admin -> {
-                println("=> Terdeteksi sebagi Admin")
+                println("=> Terdeteksi sebagai Admin")
                 pegawai.doAdminWork()
             }
         }
+
         println("-------------")
     }
 
@@ -39,6 +41,7 @@ fun main() {
     println("Luas Lingkaran: ${mathHelper.hitungLuas(7.0)}")
 
     println("====================================")
+
 
     // SIMULASI PEMBAYARAN (TASK 2)
     // ==============================
