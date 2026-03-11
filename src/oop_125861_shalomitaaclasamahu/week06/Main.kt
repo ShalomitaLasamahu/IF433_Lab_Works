@@ -1,5 +1,6 @@
 package oop_125861_shalomitaaclasamahu.week06
 
+
 fun processCheckout(method: PaymentMethod, amount: Double) {
     println("-> Memulai checkout...")
     method.pay(amount)
@@ -23,4 +24,11 @@ fun main() {
     println("\n=== Testing Checkout ===")
     processCheckout(pay1, 50000.0)
     processCheckout(pay2, 150000.0)
+
+    // CHECKPOINT 19
+
+    val lamp = SmartLamp("1", "Ruang Tamu")
+    val speaker = SmartSpeaker("2", "Google Nest Dapur")
+    val cctv = SmartCCTV("3", "Ezviz Garasi")
+
 }
