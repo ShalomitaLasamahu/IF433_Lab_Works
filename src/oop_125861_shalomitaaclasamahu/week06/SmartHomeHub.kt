@@ -27,7 +27,8 @@ class SmartHomeHub {
             }
 
             if (device is SmartSpeaker) {
-                device.playMusic("Sirine Peringatan")
+                val speaker = device as SmartSpeaker
+                speaker.playMusic("Sirine Peringatan")
             }
         }
     }
