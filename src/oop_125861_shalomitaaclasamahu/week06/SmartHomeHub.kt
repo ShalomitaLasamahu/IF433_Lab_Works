@@ -12,6 +12,7 @@ class SmartHomeHub {
 
         for (device in devices) {
 
+            // Smart casting untuk Switchable
             if (device is Switchable) {
                 device.turnOff()
             }
@@ -22,10 +23,12 @@ class SmartHomeHub {
 
         for (device in devices) {
 
+            // Jika device bisa merekam
             if (device is Recordable) {
                 device.startRecord()
             }
 
+            // Jika device adalah SmartSpeaker
             if (device is SmartSpeaker) {
                 val speaker = device as SmartSpeaker
                 speaker.playMusic("Sirine Peringatan")

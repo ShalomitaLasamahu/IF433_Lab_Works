@@ -8,4 +8,7 @@ class Smartphone: Camera, Phone {
         super<Phone>.tur0n() // menjalankan logika phone
         println("Sistem operasi smartphone berhasil booting.")
     }
+
+    override fun takePhoto() {
+    }
 }

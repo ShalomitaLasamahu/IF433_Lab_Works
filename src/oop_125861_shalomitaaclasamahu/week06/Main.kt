@@ -2,19 +2,25 @@ package oop_125861_shalomitaaclasamahu.week06
 
 fun processCheckout(method: PaymentMethod, amount: Double) {
     println("-> Memulai checkout...")
-    method.pay(amount) //   Dynamic polymorphism in action
+    method.pay(amount)
 }
+
 fun main() {
-    val  myWatch = Smartwatch()
+
+    // Testing Smartwatch
+    val myWatch = Smartwatch("Samsung")
+    myWatch.showBrand()
     myWatch.showTime()
 
+    // Testing Diamond Problem (Smartphone)
     val myPhone = Smartphone()
-    myPhone.turn0n()
+    myPhone.takePhoto()
 
+    // Testing Payment Method (Polymorphism)
     val pay1 = Gopay()
     val pay2 = CreditCard()
 
     println("\n=== Testing Checkout ===")
-    processCheckout(pay1, amount = 50000.0)
-    processCheckout(pay2, amount = 150000.0)
+    processCheckout(pay1, 50000.0)
+    processCheckout(pay2, 150000.0)
 }
