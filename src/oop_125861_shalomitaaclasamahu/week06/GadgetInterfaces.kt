@@ -1,9 +1,25 @@
 package oop_125861_shalomitaaclasamahu.week06
 
-interface Camera{
-    fun turn0n() { println("Lensa kamera terbuka dan sensor akitf.") }
+// Interface untuk kamera
+interface Camera {
+    fun turnOn() {
+        println("Lensa kamera terbuka dan sensor aktif.")
+    }
 }
 
+// Interface untuk telepon
 interface Phone {
-    fun tur0n() { println("Sinyal seluler mencari jaringan.") }
+    fun turnOn() {
+        println("Sinyal seluler mencari jaringan.")
+    }
+}
+
+// Interface untuk fitur smartwatch
+interface HeartRateMonitor {
+    fun measureHeartRate()
+}
+
+// Interface untuk penghitung langkah
+interface StepTracker {
+    fun countSteps()
 }
