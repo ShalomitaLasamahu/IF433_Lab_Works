@@ -16,4 +16,10 @@ fun main() {
     val reg2 = RegulerUser("Amanda", 19)
     println(reg1)
     println("Sama? ${reg1 == reg2}") // false
+
+    println("\n=== TEST REGULAR CLASS ===")
+    val data1 = DataUser("Amanda",19)
+    val data2 = DataUser("Amanda", 19)
+    println(data1) // otomatis readable format
+    println("Sama? ${data1 == data2}") // TRUE
 }
