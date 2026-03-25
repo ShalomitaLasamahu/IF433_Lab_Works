@@ -15,7 +15,7 @@ fun processEvent(event: BattleState) {
         }
 
         BattleState.SafeZone -> {
-            println("Pemain berada di zona aman.")
+            println("Berada di zona aman.")
         }
     }
 }
