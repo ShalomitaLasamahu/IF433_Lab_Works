@@ -4,7 +4,6 @@ class Weapon private constructor(
     val item: GameItem,
     val durability: Int
 ) {
-
     companion object {
 
         fun forgeStarterSword(): Weapon {
@@ -13,7 +12,7 @@ class Weapon private constructor(
         }
 
         fun forgeEpicSword(): Weapon {
-            val item = GameItem("Pedang Naga Legendaris", 100, ItemRarity.EPIC)
+            val item = GameItem("Pedang Naga", 100, ItemRarity.EPIC)
             return Weapon(item, 200)
         }
     }
