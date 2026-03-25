@@ -1,7 +1,5 @@
 package oop_125861_shalomitaaclasamahu.week07
 
-import oop_125861_shalomitaaclasamahu.week07.NetworkClient.Companion.createClient
-
 fun main() {
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
@@ -22,4 +20,10 @@ fun main() {
     val data2 = DataUser("Amanda", 19)
     println(data1) // otomatis readable format
     println("Sama? ${data1 == data2}") // TRUE
+
+    val data3 = data1.copy(age = 19)
+    println("Hasil copy: $data3")
+
+    val (userName, userAge) = data1 // Destructuring declaration
+    println("Destructured: $userName, berumur $userAge")
 }
