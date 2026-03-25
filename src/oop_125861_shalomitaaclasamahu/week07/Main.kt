@@ -10,13 +10,13 @@ fun main() {
     client.connect()
 
     println("\n=== TEST REGULAR CLASS ===")
-    val reg1 = RegulerUser("Amanda",19)
+    val reg1 = RegulerUser("Amanda", 19)
     val reg2 = RegulerUser("Amanda", 19)
     println(reg1)
     println("Sama? ${reg1 == reg2}") // false
 
     println("\n=== TEST REGULAR CLASS ===")
-    val data1 = DataUser("Amanda",19)
+    val data1 = DataUser("Amanda", 19)
     val data2 = DataUser("Amanda", 19)
     println(data1) // otomatis readable format
     println("Sama? ${data1 == data2}") // TRUE
@@ -29,11 +29,11 @@ fun main() {
 
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil di tarik!")
-
-    val uiMessage = when(response) {
+    val uiMessage = when (response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
         ApiResponse.Loading -> "Tampilkan Spinner"
     }
 
     println(uiMessage)
+}
