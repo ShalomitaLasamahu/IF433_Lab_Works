@@ -1,4 +1,20 @@
 package oop_125861_shalomitaaclasamahu.week07
 
-class WeaponForge {
+class Weapon private constructor(
+    val item: GameItem,
+    val durability: Int
+) {
+
+    companion object {
+
+        fun forgeStarterSword(): Weapon {
+            val item = GameItem("Pedang Kayu Bapuk", 5, ItemRarity.COMMON)
+            return Weapon(item, 50)
+        }
+
+        fun forgeEpicSword(): Weapon {
+            val item = GameItem("Pedang Naga Legendaris", 100, ItemRarity.EPIC)
+            return Weapon(item, 200)
+        }
+    }
 }
