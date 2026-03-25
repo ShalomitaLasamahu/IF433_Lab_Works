@@ -1,6 +1,7 @@
 package oop_125861_shalomitaaclasamahu.week07
 
 fun main() {
+
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
     DatabaseManager.connect()
@@ -15,7 +16,7 @@ fun main() {
     println(reg1)
     println("Sama? ${reg1 == reg2}") // false
 
-    println("\n=== TEST REGULAR CLASS ===")
+    println("\n=== TEST DATA CLASS ===")
     val data1 = DataUser("Amanda", 19)
     val data2 = DataUser("Amanda", 19)
     println(data1) // otomatis readable format
@@ -24,11 +25,12 @@ fun main() {
     val data3 = data1.copy(age = 19)
     println("Hasil copy: $data3")
 
-    val (userName, userAge) = data1 // Destructuring declaration
+    val (userName, userAge) = data1 // Destructuring
     println("Destructured: $userName, berumur $userAge")
 
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil di tarik!")
+
     val uiMessage = when (response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
@@ -36,4 +38,11 @@ fun main() {
     }
 
     println(uiMessage)
+
+    // =========================
+    // CHECKPOINT 18
+    // =========================
+    println("\n=== TEST GAME MANAGER (SINGLETON) ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }

@@ -1,16 +1,15 @@
 package oop_125861_shalomitaaclasamahu.week07
 
-class GameManager {
-    object GameManager {
-        var isGameRunning: Boolean = false
+object GameManager {
 
-        fun startGame() {
-            if (isGameRunning) {
-                println("Game sudah berjalan! Mencegah instansiasi ganda.")
-            } else {
-                isGameRunning = true
-                println("Memulai Game Engine...")
-            }
+    var isGameRunning: Boolean = false
+
+    fun startGame() {
+        if (isGameRunning) {
+            println("Game sudah berjalan! Mencegah instansiasi ganda.")
+        } else {
+            isGameRunning = true
+            println("Memulai Game Engine...")
         }
     }
 }
