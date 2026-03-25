@@ -30,8 +30,10 @@ fun main() {
     println("\n=== TEST SEALED CLASS ===")
     val response: ApiResponse = ApiResponse.Success("Data berhasil di tarik!")
 
-    // error: 'when' expression must be exhasutive
     val uiMessage = when(response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
         is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+        ApiResponse.Loading -> "Tampilkan Spinner"
     }
+
+    println(uiMessage)
