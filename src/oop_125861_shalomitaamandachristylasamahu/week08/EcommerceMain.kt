@@ -2,6 +2,7 @@ package oop_125861_shalomitaamandachristylasamahu.week08
 
 fun main() {
     println("=== E-COMMERCE API PARSER ===\n")
+    // Testing pipeline: Electronic, Clothing, Corrupted warranty, Missing ID, Unknown type
 
     val rawApiData: List<Map<String, Any?>> = listOf(
         mapOf("id" to "E01", "name" to "Laptop", "type" to "ELECTRONIC", "warranty" to 24),
