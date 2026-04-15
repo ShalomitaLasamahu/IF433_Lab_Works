@@ -3,7 +3,6 @@ package oop_125861_shalomitaamandachristylasamahu.week08
 class ApiParser {
 
     fun parseProduct(rawJson: Map<String, Any?>): Product? {
-        // Ekstrak id dan name dengan requireNotNull
         val id = requireNotNull(rawJson["id"]) { "API Invalid: Missing ID" } as String
         val name = requireNotNull(rawJson["name"]) { "API Invalid: Missing Name" } as String
 
@@ -22,15 +21,20 @@ class ApiParser {
         }
     }
 
+    // ============ CHECKPOINT 18 ============
+    // Fungsi checkout dengan menggunakan !! untuk Java Interop
     fun checkout(product: Product) {
+        // Ekstrak ID dari product dengan pola when (karena ia sealed class)
         val transactionId = when (product) {
             is Product.Electronic -> JavaPaymentService.processPayment(product.id)
             is Product.Clothing -> JavaPaymentService.processPayment(product.id)
         }
 
-        // Menggunakan !! karena kita yakin Java service selalu mengembalikan nilai
+        // !!! WAJIB: Menggunakan !! pada hasil tangkapannya untuk membuktikan Java Interop
+        // Karena kita yakin Java service selalu berhasil mengeluarkan Transaction ID
         println("Transaction ID: ${transactionId!!}")
 
+        // Print detail product
         when (product) {
             is Product.Electronic -> {
                 println("  Product: ${product.name} (Electronic)")
@@ -44,4 +48,5 @@ class ApiParser {
         println("  Status: CHECKOUT SUCCESS")
         println()
     }
+    // ============ END CHECKPOINT 18 ============
 }
