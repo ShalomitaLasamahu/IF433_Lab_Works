@@ -10,43 +10,4 @@ fun main() {
         TradeLog("XRPUSDT", "SHORT", 5, -8.0, "CLOSED"),
         TradeLog("BTCUSDT", "SHORT", 10, 5.5, "OPEN")
     )
-
-    // FILTER CLOSED
-    val closedTrades = tradeHistory
-        .filter { it.status == "CLOSED" }
-
-    // WINNING
-    val winningTrades = closedTrades
-        .filter { it.roe > 0 }
-
-    // LOSING
-    val losingTrades = closedTrades
-        .filter { it.roe <= 0 }
-
-    // TOP PERFORMERS
-    val topPerformersString = winningTrades
-        .sortedByDescending { it.roe }
-        .map {
-            "WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)"
-        }
-
-    // WORST PERFORMERS
-    val worstPerformersString = losingTrades
-        .sortedBy { it.roe }
-        .map {
-            "LOSS [${it.pair} - ${it.position}]: ${it.roe}% ROE (Lev: ${it.leverage}x)"
-        }
-
-    // UNIQUE PAIRS
-    val uniquePairs = tradeHistory
-        .map { it.pair }
-        .toSet()
-
-    // OUTPUT
-    println("=== CRYPTO TRADING DASHBOARD ===")
-
-    topPerformersString.forEach { println(it) }
-    worstPerformersString.forEach { println(it) }
-
-    println("Traded Pairs: $uniquePairs")
 }
