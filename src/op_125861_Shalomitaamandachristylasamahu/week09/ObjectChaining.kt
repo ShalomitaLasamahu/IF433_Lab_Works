@@ -12,7 +12,6 @@ fun main() {
     )
 
     println("=== HONOR STUDENTS PIPELINE ===")
-
     val honorNames = students
         .filter { it.gpa >= 3.5 }
         .sortedBy { it.name }
