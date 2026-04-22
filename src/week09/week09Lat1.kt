@@ -62,4 +62,20 @@ fun main() {
     arKHS["Nika"] = 92
     arKHS["shalom"]=99
     println(arKHS);
+
+    println("====== LAMBDA =====");
+    // FUNCTION BIASA
+    fun tambah(a: Int, b: Int): Int {
+        return a + b;
+    }
+    println("hasil penambahan ${tambah(a= 5, b = 3)}")
+
+    // function lamba -> nulis ke samping
+    val kurang = { a: Int, b: Int -> a - b }
+    println("Hasil pengurangan ${kurang(5,3)}")
+
+    println("====== LAMBDA { IT } =====");
+    val pagkat = {a: Int, b: Int -> a*b }
+    val hasilpangkat: (Int) -> Int = { it * it }
+    println("Hasil pangkat ${hasilpangkat(5)}");
 }
