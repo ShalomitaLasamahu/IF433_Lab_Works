@@ -1,4 +1,4 @@
-package week5
+package Week7_Lec.week5
 
 class Wajib: MataKuliah() {
     override fun set_matkul(sks: Int) {

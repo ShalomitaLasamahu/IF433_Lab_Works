@@ -1,4 +1,4 @@
-package week5
+package Week7_Lec.week5
 
 fun main() {
     val listMatkul: List<MataKuliah> = listOf (
