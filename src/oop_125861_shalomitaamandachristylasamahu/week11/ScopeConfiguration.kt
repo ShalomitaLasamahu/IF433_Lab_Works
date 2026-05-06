@@ -1,3 +1,14 @@
 package oop_125861_shalomitaamandachristylasamahu.week11
 
-data class User(val name: String, val age: Int=0)
+data class User(var name: String = "", var age: Int=0)
+
+fun main() {
+    println("=== TEST APPLY ===")
+
+    val user = User().apply {
+        name = "Alex"
+        age = 25
+    }
+
+    println(user)
+}
