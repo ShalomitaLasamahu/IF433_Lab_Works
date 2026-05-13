@@ -60,7 +60,7 @@ fun main() {
     println()
 
     // CHECKPOINT 17: Jadwal Makan 2
-    println("=== JADWAL MAKAN SORE (CP17) ===")
+    println("=== JADWAL MAKAN SORE ===")
 
     val result = runCatching {
         dispenseKibble(
@@ -69,7 +69,9 @@ fun main() {
             isJammed = false
         )
     }
-
-    println("Result: $result")
+        .onSuccess { newStock ->
+            currentKibbleStock = newStock
+            println("Makan sore sukses! Sisa stok kibble: ${currentKibbleStock}gr")
+        }
 }
 
