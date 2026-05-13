@@ -51,4 +51,25 @@ fun main() {
         println("Siklus pengecekan dispenser pagi selesai.")
     }
 
+    println()
+
+    // Pemilik mengisi ulang stoknyaa
+    println("=== PEMILIK MENGISI ULANG STOK ===")
+    currentKibbleStock = 1000
+    println("Stok setelah diisi ulang: ${currentKibbleStock}gr")
+    println()
+
+    // CHECKPOINT 17: Jadwal Makan 2
+    println("=== JADWAL MAKAN SORE (CP17) ===")
+
+    val result = runCatching {
+        dispenseKibble(
+            requestedGram = 30,
+            availableGram = currentKibbleStock,
+            isJammed = false
+        )
+    }
+
+    println("Result: $result")
 }
+
