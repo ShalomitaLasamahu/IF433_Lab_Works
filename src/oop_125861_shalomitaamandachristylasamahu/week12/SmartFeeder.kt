@@ -19,10 +19,32 @@ fun main() {
     println("=== SMART PET FEEDER SYSTEM ===")
     println()
 
-    // Variabel awal stok kibble
     var currentKibbleStock = 50
     println("Initial kibble stock: ${currentKibbleStock}gr")
     println()
+
+    // Checkpointt 15: Jadwal Makan 1 - Multiple Catch
+    println("=== JADWAL MAKAN PAGI ===")
+
+    try {
+        val newStock = dispenseKibble(
+            requestedGram = 80,
+            availableGram = currentKibbleStock,
+            isJammed = false
+        )
+        currentKibbleStock = newStock
+        println("Makan pagi sukses! Sisa stok: ${currentKibbleStock}gr")
+
+    } catch (e: DispenserJamException) {
+        println("ERROR: ${e.message}")
+        println("Silakan periksa dispenser dan bersihkan wadah!")
+
+    } catch (e: FoodEmptyException) {
+        println("ERROR: ${e.message}")
+        println("Silakan isi ulang stok kibble!")
+
+    } catch (e: Exception) {
+        println("ERROR Umum: ${e.message}")
+    }
+
 }
-
-
