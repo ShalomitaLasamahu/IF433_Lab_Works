@@ -45,6 +45,10 @@ fun main() {
 
     } catch (e: Exception) {
         println("ERROR Umum: ${e.message}")
+
+    } finally {
+        // CHECKPOINT 16: Finally block
+        println("Siklus pengecekan dispenser pagi selesai.")
     }
 
 }
