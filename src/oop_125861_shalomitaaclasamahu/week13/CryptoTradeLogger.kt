@@ -16,5 +16,16 @@ fun fromCsvTrade(line: String): TradeRecord? {
             parts[3].toDouble(),
             parts[4].toDouble()
         )
+    } catch (e: Exception) {
+        println("(Log) Data korup diabaikan: $line")
+        null
+    }
+}
+
+fun saveTrades(trades: List<TradeRecord>, path: String) {
+    File(path).printWriter().use { writer ->
+        trades.forEach { trade ->
+            writer.println(trade.toCsv())
+        }
     }
 }
