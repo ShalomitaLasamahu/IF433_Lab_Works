@@ -14,4 +14,16 @@ fun main() {
 
     writer.close()
     println("Proses Penulisan unsafe selesai..")
+
+    println("\n=== TEST SAFE RESOURCE HANDLING ===")
+    val safeFile = File("safe_logs.txt")
+
+// Writer akan OTOMATIS di-close saat keluar dari blok kurawal pembungkusnya
+    safeFile.printWriter().use { out ->
+        for (i in 1..100) {
+            out.println("Safe Log entry #$i: System status OK.")
+        }
+    }
+
+    println("100 baris log berhasil di-generate dengan sangat aman.")
 }
