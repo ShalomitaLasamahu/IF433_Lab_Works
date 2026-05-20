@@ -16,8 +16,5 @@ fun fromCsvTrade(line: String): TradeRecord? {
             parts[3].toDouble(),
             parts[4].toDouble()
         )
-    } catch (e: Exception) {
-        println("(Log) Data korup diabaikan: $line")
-        null
     }
 }
