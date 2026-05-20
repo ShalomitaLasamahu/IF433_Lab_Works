@@ -6,4 +6,5 @@ fun main() {
     val file = File("notes.txt")
     file.writeText("notes.txt")
     println("File berhasil dibuat dan ditulis")
+
 }
