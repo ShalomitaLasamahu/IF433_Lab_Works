@@ -16,6 +16,4 @@ fun main() {
 
     println("\n===TEST READ LINES ===")
     val lines = file.readLines()
-    lines.forEachIndexed { index, line ->  }
-        println("Isi index $index: $line")
 }
